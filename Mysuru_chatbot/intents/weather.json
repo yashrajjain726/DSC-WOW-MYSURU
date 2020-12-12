@@ -1,0 +1,89 @@
+{
+  "id": "a77cc9f1-936d-4387-a019-6f5598c4fc36",
+  "name": "weather",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "weather",
+      "affectedContexts": [
+        {
+          "name": "weather-intent-follow-up",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "fcaed796-12d5-4f07-9e6a-e1f509e7044b",
+          "name": "city",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "value": "$city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please enter the city"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "e1f334a1-816c-438d-9457-2d761118d78d",
+          "name": "period",
+          "required": false,
+          "dataType": "@sys.date-period",
+          "value": "$period",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "6d989d0b-5a0f-4c07-ae8f-3d4e47d0e591",
+          "name": "date-time",
+          "required": false,
+          "dataType": "@sys.date-time",
+          "value": "$date-time",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": true
+}

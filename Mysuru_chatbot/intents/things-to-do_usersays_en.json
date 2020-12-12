@@ -1,0 +1,82 @@
+[
+  {
+    "id": "0608d7bb-f4b1-4ee8-aa2d-8688ac6395f1",
+    "data": [
+      {
+        "text": "things to do in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "d7d988db-87ec-4ef2-a54f-639100db8322",
+    "data": [
+      {
+        "text": "what are to be done must in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "e592108b-890d-4024-9843-38485667b8dd",
+    "data": [
+      {
+        "text": "what should be done in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " free time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f974cfc8-d40d-4793-bfed-0178ec527d3c",
+    "data": [
+      {
+        "text": "what should we do in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "id": "0cc95c98-e278-4395-909f-550c599f461a",
+  "name": "volunteer",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "volunteer-intent-follow-up",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "cb8f2445-f427-4bd8-8f22-6c820a9e8bf7",
+          "name": "geo-city",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "value": "$geo-city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://www.flaticon.com/svg/static/icons/svg/1305/1305723.svg"
+                        }
+                      },
+                      "text": "Volunteer of Mysuru",
+                      "link": "https://example.com"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

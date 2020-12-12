@@ -1,0 +1,72 @@
+{
+  "id": "d29e27df-64e5-4f66-a3c3-d935f365d561",
+  "name": "flight",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "flight-intent-follow-up",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "784130fa-fe01-4715-b524-02e3993de13e",
+          "name": "geo-city",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "value": "$geo-city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "text": "Flight Booking Menu",
+                      "link": "https://example.com",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn.iconscout.com/icon/premium/png-256-thumb/flights-690937.png"
+                        }
+                      }
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
