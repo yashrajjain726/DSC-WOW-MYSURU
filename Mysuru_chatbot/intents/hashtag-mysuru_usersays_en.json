@@ -1,0 +1,85 @@
+[
+  {
+    "id": "4e4f110f-e882-437e-bd53-c330f8252a30",
+    "data": [
+      {
+        "text": "what is happening in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "adca953a-fe56-4ddc-bc17-04eca55825fc",
+    "data": [
+      {
+        "text": "that is ongoing there",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ec7fc5f9-faeb-49fc-9ab6-ff7c0521dcaf",
+    "data": [
+      {
+        "text": "viral things in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "b89b12e4-ae6e-422f-8ab6-277d0ef6ba97",
+    "data": [
+      {
+        "text": "hashtag mysuru over the internet",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9799466a-ed68-4ab0-a73c-b85912217b27",
+    "data": [
+      {
+        "text": "trending things in ",
+        "userDefined": false
+      },
+      {
+        "text": "mysuru",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]
