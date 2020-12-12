@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(245, 245, 245);
+  height: 100%;
+  width: 100%;
+}
+nav {
+  background-color: rgba(17, 17, 17, 0.767);
+  width: 100vw !important;
+  padding: 0 !important;
+}
+.navbar-brand img {
+  width: 75px;
+}
+.navbar-toggler {
+  outline: none !important;
+  border: none;
+}
+.navbar-toggler i {
+  font-size: 32px;
+  color: #fff;
+}
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #acacac !important;
+}
+.nav-link:hover,
+.active > a {
+  color: white !important;
+  font-weight: 600;
+}
+#contact {
+  width: 100%;
+  margin-bottom: 50px;
+}
+#contact #main {
+  display: flex;
+}
+#contact h1 {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  color: #494848;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 35px;
+}
+#map {
+  width: 50%;
+  height: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#details {
+  width: 50%;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px;
+}
+#details h2 {
+  color: rgb(218, 11, 99);
+}
+#details p {
+  color: #494848;
+}
+#details #mail {
+  color: #494848;
+}
+#social {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#social a {
+  background-color: #494848;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  margin-left: 5px;
+}
+#social a .social-icons {
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+}
+footer {
+  width: 100%;
+  background-color: #292828;
+  height: auto;
+  color: white;
+}
+footer #main {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px 0 10px 50px;
+}
+footer #main .coloumn ul {
+  list-style: none;
+  display: inline-block;
+}
+footer #main .coloumn ul li {
+  list-style: none;
+}
+footer #main .coloumn ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+}
+#footer-coloumn2 {
+  padding-left: 50px;
+}
+footer #main .coloumn ul li a:hover {
+  color: rgb(251, 124, 30);
+}
+footer #main .coloumn h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(251, 124, 30);
+}
+#footer-coloumn3 #social {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#footer-coloumn3 #social a {
+  background-color: #494848;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  margin-left: 5px;
+}
+#footer-coloumn3 #social a i {
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px;
+}
+footer #copyright {
+  width: 100%;
+  height: 50px;
+  background-color: #181818;
+  text-align: center;
+  padding-top: 15px;
+}
+footer p {
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .coloumn {
+    margin-bottom: 20px;
+  }
+  #footer-coloumn2 {
+    padding-left: 15px;
+  }
+  footer #main {
+    padding: 10px 0 10px 10px;
+  }
+  #contact {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  #contact #main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #contact h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: #494848;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 25px;
+  }
+  #map {
+    width: 100%;
+    height: 50%;
+  }
+  #details {
+    width: 100%;
+    height: 50%;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+  #details h2 {
+    color: rgb(218, 11, 99);
+    font-size: 22px;
+  }
+  #details p {
+    color: #494848;
+    font-size: 16px;
+  }
+  #details #mail {
+    color: #494848;
+  }
+  #social {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  #social a {
+    background-color: #494848;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  #social a i {
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 568px) {
+  nav {
+    padding: 0 20px !important;
+  }
+}
