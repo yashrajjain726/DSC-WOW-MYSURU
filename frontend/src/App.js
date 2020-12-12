@@ -116,7 +116,7 @@ function App() {
       {/* // footer */}
       <footer>
         <section id="main">
-          <div id="footer-coloumn1" class="col-lg-4 col-sm-12 coloumn">
+          <div id="footer-coloumn1" className="col-lg-4 col-sm-12 coloumn">
             <h5>About Us</h5>
             <p>
               Our mission is to create a trustable platform for travellers and a
@@ -124,7 +124,7 @@ function App() {
               travellers friendly destination
             </p>
           </div>
-          <div id="footer-coloumn2" class="col-lg-4 col-sm-12 coloumn">
+          <div id="footer-coloumn2" className="col-lg-4 col-sm-12 coloumn">
             <h5>Quick Links</h5>
             <ul>
               <li>
@@ -141,7 +141,7 @@ function App() {
               </li>
             </ul>
           </div>
-          <div id="footer-coloumn3" class="col-lg-4 col-sm-12 coloumn">
+          <div id="footer-coloumn3" className="col-lg-4 col-sm-12 coloumn">
             <h5>Contact Us</h5>
             <p>Phone : 08064744188</p>
             <p>Phone : 08064744188</p>

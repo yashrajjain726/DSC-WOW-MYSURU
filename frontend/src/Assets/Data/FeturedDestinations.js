@@ -51,7 +51,7 @@ const FeaturedDestinations = [
   },
   {
     src: railwayMuseum,
-    cardTitle: "Railway Museum ",
+    cardTitle: "Railway Museum",
     cardText: "Lorem ipsum dolor sit amet",
   },
 ];

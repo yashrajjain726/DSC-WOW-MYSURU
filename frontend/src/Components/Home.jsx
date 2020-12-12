@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Assets/Css/home.css'
 import slide1 from '../Assets/Images/Home/slide1.jpg'
 import slide2 from '../Assets/Images/Home/slide2.jpg'
@@ -16,7 +16,24 @@ import FeaturedDestinations from '../Assets/Data/FeturedDestinations.js';
 // ft. destination card
 import Card_Ft_Destination from '../Components/Card_Ft_Destination'
 
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 function Home() {
+
+    useEffect(() => {
+        firebase.firestore().collection('rating').get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                sessionStorage.setItem(`${doc.data().id + '_count'}`, `${doc.data().count}`);
+                sessionStorage.setItem(`${doc.data().id + '_user'}`, `${doc.data().user}`);
+                console.log(`${doc.data().id + '_count'}`);
+                console.log(`${doc.data().count}`);
+                console.log(`${doc.data().id + '_user'}`);
+                console.log(`${doc.data().user}`);
+
+            });
+        })
+    }, [])
     return (
         <>
             <Carousel>

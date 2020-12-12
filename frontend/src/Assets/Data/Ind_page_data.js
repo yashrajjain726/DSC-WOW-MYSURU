@@ -81,7 +81,7 @@ const page_data = {
     text:
       "Chamundi Hills is one of the most popular places to visit in Mysore with nature lovers, religious travellers, and photographers pouring in from all over the world. It is also one of the best points for a panoramic view of Mysore city. You can reach the hill summit either via road or for something more adventurous, take the stone stairs.      ",
   },
-  "Railway Museum ": {
+  "Railway Museum": {
     src: railwayMuseum,
     map:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.99178945351!2d76.64113431412171!3d12.316339291288124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7075a5dd3cd3%3A0x31cb5be481e0c44a!2sRail%20Museum!5e0!3m2!1sen!2sin!4v1607783033696!5m2!1sen!2sin",

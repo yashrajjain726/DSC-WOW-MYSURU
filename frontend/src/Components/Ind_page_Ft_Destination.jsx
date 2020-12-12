@@ -8,21 +8,30 @@ function Ft_Destination(props) {
     const [rating, setRating] = useState(0);
     const onStarClick = (nextValue, prevValue, name) => {
         setRating(nextValue);
-        save();
-    }
-
-
-    const title = props.match.params.title;
-    const id = title.replace(/\s+/g, "");
-    let count = Number(sessionStorage.getItem(`${id + _count}`));
-    let user = Number(sessionStorage.getItem(`{${id + _user}}`));
-    function save() {
+        // save();
         firebase.firestore().collection('rating').doc(id).set({
             id: id,
-            count: count + rating,
+            count: count + nextValue,
             user: user + 1
+        }).then(() => {
+            console.log(user);
+            sessionStorage.setItem(`${id + '_user'}`, `${user + 1}`);
+            sessionStorage.setItem(`${id + '_count'}`, `${count + nextValue}`);
+
+            console.log('saved')
         })
+            .catch(err => console.log(err));
     }
+    const title = props.match.params.title;
+    const id = title.replace(/\s+/g, "");
+    let count = Number(sessionStorage.getItem(`${id + '_count'}`));
+
+    let user = Number(sessionStorage.getItem(`${id + '_user'}`));
+    console.log(user);
+    console.log(count);
+    // function save() {
+
+    // }
     useEffect(() => {
         console.log(title.replace(/\s+/g, ""));
     }, []);
@@ -36,7 +45,7 @@ function Ft_Destination(props) {
                 <div className="col-md-6">
                     <img src={data.src} alt="" className='img-fluid' />
                 </div>
-                <div className="col-md-6 mt-4 px-4 pt-3" id='rating-container'>
+                <div className="col-md-6 mt-4 mt-md-0 px-4 pt-3" id='rating-container'>
                     <h4 className='text-uppercase'>{title}</h4>
                     <p>{data.text}</p>
                     <StarRatingComponent
