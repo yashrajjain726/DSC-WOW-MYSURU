@@ -7,6 +7,8 @@ import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
 
+import "./Assets/Css/home.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -48,7 +50,7 @@ function App() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/todo-in-mysuru">
+                <a className="nav-link" href="/#shorcuts">
                   Make plans
                 </a>
               </li>
