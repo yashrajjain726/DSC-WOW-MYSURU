@@ -1,21 +1,38 @@
-import React, { useState } from 'react';
-import zoologicalGarden from "../Assets/Images/Home/zoological garden.jpg";
+import React, { useState, useEffect } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 import pageData from "../Assets/Data/Ind_page_data.js";
 
 function Ft_Destination(props) {
     const [rating, setRating] = useState(0);
     const onStarClick = (nextValue, prevValue, name) => {
         setRating(nextValue);
+        save();
     }
+
+
     const title = props.match.params.title;
+    const id = title.replace(/\s+/g, "");
+    let count = Number(sessionStorage.getItem(`${id + _count}`));
+    let user = Number(sessionStorage.getItem(`{${id + _user}}`));
+    function save() {
+        firebase.firestore().collection('rating').doc(id).set({
+            id: id,
+            count: count + rating,
+            user: user + 1
+        })
+    }
+    useEffect(() => {
+        console.log(title.replace(/\s+/g, ""));
+    }, []);
     // const data = props.data;
     // console.log(name);
     const data = pageData[title];
     return (
-        <div className="container-fluid">
-            <div className="row" style={{ marginTop: '72' + 'px', paddingTop: '40' + 'px' }}>
+        <div className="container-fluid" style={{ marginTop: '62' + 'px', paddingTop: '20' + 'px' }}>
+            <h1 className="heading mb-4">Featured Destinations</h1>
+            <div className="row">
                 <div className="col-md-6">
                     <img src={data.src} alt="" className='img-fluid' />
                 </div>

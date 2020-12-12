@@ -9,6 +9,7 @@ import Home from "./Components/Home";
 import Bookings from "./Components/Bookings";
 import ToDo from "./Components/ToDo";
 import Ind_page_Ft_Destination from "./Components/Ind_page_Ft_Destination";
+import Volunteers from "./Components/Volunteers";
 
 import "./Assets/Css/home.css";
 
@@ -27,9 +28,21 @@ import logo from "./Assets/Images/Home/logo.png";
 import flights from "./Assets/Data/flight.js";
 import hotels from "./Assets/Data/hotels.js";
 import pageData from "./Assets/Data/Ind_page_data.js";
+import firebase from "firebase";
+
+var firebaseConfig = {
+  apiKey: "AIzaSyCi7EGYqr65N0Z15F0aDBGbbk6_rHfxuDw",
+  authDomain: "error404-mysuru.firebaseapp.com",
+  projectId: "error404-mysuru",
+  storageBucket: "error404-mysuru.appspot.com",
+  messagingSenderId: "610981807715",
+  appId: "1:610981807715:web:c5b948c2e2bd03ec6e1a56",
+  measurementId: "G-0K4RE5PBJP",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 function App() {
-  console.log(flights);
   return (
     <>
       {/* // nav  */}
@@ -64,6 +77,11 @@ function App() {
                 </a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" href="/volunteers">
+                  Volunteers
+                </a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" href="/contact-us">
                   Contact us
                 </a>
@@ -91,6 +109,7 @@ function App() {
             path="/featured-destination/:title"
             component={Ind_page_Ft_Destination}
           />
+          <Route exact path="/volunteers" component={Volunteers} />
         </Switch>
       </Router>
 
@@ -109,16 +128,16 @@ function App() {
             <h5>Quick Links</h5>
             <ul>
               <li>
-                <a href="#destinations">Featured destinations</a>
+                <a href="/#destinations">Featured destinations</a>
               </li>
               <li>
-                <a href="#shorcuts">Make Bookings</a>
+                <a href="/#shorcuts">Make Bookings</a>
               </li>
               <li>
-                <a href="#">Covid Cases in Mysuru</a>
+                <a href="/covid-dashboard">Covid Cases in Mysuru</a>
               </li>
               <li>
-                <a href="#">Contact us </a>
+                <a href="/contact-us">Contact us </a>
               </li>
             </ul>
           </div>

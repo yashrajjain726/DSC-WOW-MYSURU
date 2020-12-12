@@ -105,6 +105,13 @@ button.navbar-toggler {
   margin-top: 30px;
   color: rgb(218, 11, 99);
 }
+.heading {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  color: rgb(218, 11, 99);
+}
 #shorcuts {
   width: 100%;
   margin-bottom: 20px;

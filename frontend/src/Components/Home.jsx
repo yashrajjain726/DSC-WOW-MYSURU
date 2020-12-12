@@ -24,24 +24,26 @@ function Home() {
                     <img src={slide1} className="d-block w-100" id="img1" alt="Notes" />
                     <Carousel.Caption>
                         <h5 className="animate__animated animate__fadeInDown">Scenic Beauty</h5>
-                        <p className="animate__animated animate__fadeIn"></p>
+                        <p className="animate__animated animate__fadeIn">Want to Witness the Most beautiful tourist locations of India? Don't Wait Visit Mysuru today</p>
                         <p className="animate__animated animate__fadeInUp"><a href="/appointment">Explore now</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img src={slide2} className="d-block w-100" id="img2" alt="Events" />
                     <Carousel.Caption>
-                        <h5 className="animate__animated animate__fadeInDown">Tourist Satisfaction  </h5>
-                        <p className="animate__animated animate__fadeIn"></p>
-                        <p className="animate__animated animate__fadeInUp"><a>Explore now</a></p>
+                        <h5 className="animate__animated animate__fadeInDown">Volunteers of Mysuru</h5>
+                        <p className="animate__animated animate__fadeIn">Want to connect with the group of hard working and experienced volunteers of Mysuru?
+Get connected with them easily</p>
+                        <p className="animate__animated animate__fadeInUp"><a href='/volunteers'>Connect now</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img src={slide3} className="d-block w-100" id="img3" alt="Notice" />
                     <Carousel.Caption>
-                        <h5 className="animate__animated animate__fadeInDown">Explore Nature</h5>
-                        <p className="animate__animated animate__fadeIn"></p>
-                        <p className="animate__animated animate__fadeInUp"><a href="#products">Let's go</a></p>
+                        <h5 className="animate__animated animate__fadeInDown">Make yout plans</h5>
+                        <p className="animate__animated animate__fadeIn">Want to visit mysuru but haven't made your plans?
+Make you tour interesting with our help. Make your plans now</p>
+                        <p className="animate__animated animate__fadeInUp"><a href="/#destinations">Let's go</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
@@ -86,7 +88,7 @@ function Home() {
             </section>
             <section id="book">
                 <p>Want to learn more?</p>
-                <a href=""><button>Explore #Mysuru </button></a>
+                <a href="https://twitter.com/hashtag/mysuru?lang=en"><button>Explore #Mysuru </button></a>
             </section>
         </>
     )
