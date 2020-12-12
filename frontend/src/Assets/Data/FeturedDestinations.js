@@ -16,7 +16,7 @@ const FeaturedDestinations = [
   },
   {
     src: zoologicalGarden,
-    cardTitle: "Sri Chamarajendra zoological gardens",
+    cardTitle: "Sri Chamarajendra Zoological Gardens",
     cardText: "Lorem ipsum dolor sit amet",
   },
   {

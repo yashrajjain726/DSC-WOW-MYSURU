@@ -8,6 +8,7 @@ import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
 import Bookings from "./Components/Bookings";
 import ToDo from "./Components/ToDo";
+import Ind_page_Ft_Destination from "./Components/Ind_page_Ft_Destination";
 
 import "./Assets/Css/home.css";
 
@@ -25,6 +26,7 @@ import logo from "./Assets/Images/Home/logo.png";
 // data
 import flights from "./Assets/Data/flight.js";
 import hotels from "./Assets/Data/hotels.js";
+import pageData from "./Assets/Data/Ind_page_data.js";
 
 function App() {
   console.log(flights);
@@ -84,6 +86,11 @@ function App() {
             <Bookings data={flights} />
           </Route>
           <Route exact path="/todo-in-mysuru" component={ToDo} />
+          <Route
+            exact
+            path="/featured-destination/:title"
+            component={Ind_page_Ft_Destination}
+          />
         </Switch>
       </Router>
 
