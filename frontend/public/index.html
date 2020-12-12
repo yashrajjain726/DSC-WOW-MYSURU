@@ -10,34 +10,29 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>MYSURU</title>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <df-messenger chat-icon="https://storage.googleapis.com/cloudprod-apiai/78400e69-e0a1-4ad4-b936-2d4dec5a20e1_x.png" intent="WELCOME" chat-title="Mysuru Assistant" agent-id="b026e6ec-0577-49fd-8bdd-948cd865ab88" language-code="en"></df-messenger>
-  </body>
-  <script>
-    $(document).ready(function () {
-
-      // YOUR CODE (NOT RELATED TO DIALOGFLOW MESSENGER)
-
-      window.addEventListener('dfMessengerLoaded', function (event) {
-        $r1 = document.querySelector("df-messenger");
-        $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
-        $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
-
-        var sheet = new CSSStyleSheet;
-        sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 450px }`);
-        $r2.shadowRoot.adoptedStyleSheets = [sheet];
-
-        // MORE OF YOUR DIALOGFLOW MESSENGER CODE
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script>
+      $(document).ready(function () {
+        // YOUR CODE (NOT RELATED TO DIALOGFLOW MESSENGER)
+        window.addEventListener('dfMessengerLoaded', function (event) {
+          $r1 = document.querySelector("df-messenger");
+          $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+          $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+          var sheet = new CSSStyleSheet;
+          sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 450px }`);
+          $r2.shadowRoot.adoptedStyleSheets = [sheet];
+          // MORE OF YOUR DIALOGFLOW MESSENGER CODE
+        });
       });
-    });
+    </script>
+  </body>
 
-
-
-  </script>
 
 </html>

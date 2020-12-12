@@ -7,6 +7,7 @@ import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
 import Bookings from "./Components/Bookings";
+import ToDo from "./Components/ToDo";
 
 import "./Assets/Css/home.css";
 
@@ -82,6 +83,7 @@ function App() {
           <Route exact path="/book-flights">
             <Bookings data={flights} />
           </Route>
+          <Route exact path="/todo-in-mysuru" component={ToDo} />
         </Switch>
       </Router>
 
