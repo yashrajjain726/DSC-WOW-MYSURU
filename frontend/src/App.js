@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
+import Bookings from "./Components/Bookings";
 
 import "./Assets/Css/home.css";
 
@@ -20,7 +21,12 @@ import { Navbar, Nav } from "react-bootstrap";
 
 import logo from "./Assets/Images/Home/logo.png";
 
+// data
+import flights from "./Assets/Data/flight.js";
+import hotels from "./Assets/Data/hotels.js";
+
 function App() {
+  console.log(flights);
   return (
     <>
       {/* // nav  */}
@@ -70,6 +76,12 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/contact-us" component={Contact} />
           <Route exact path="/covid-dashboard" component={Dashboard} />
+          <Route exact path="/book-hotels">
+            <Bookings data={hotels} />
+          </Route>
+          <Route exact path="/book-flights">
+            <Bookings data={flights} />
+          </Route>
         </Switch>
       </Router>
 

@@ -65,13 +65,13 @@ function Home() {
                 <h1 class="section-heading explore">Make Your plans</h1>
                 <div class="card-deck">
                     <div class="card">
-                        <a href="#" class="card-link">
+                        <a href="/book-flights" class="card-link">
                             <img src={flight} class="card-img-top" alt="Flight" />
                             <span>Book Flight </span>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="#" class="card-link">
+                        <a href="/book-hotels" class="card-link">
                             <img src={hotel} class="card-img-top" alt="Hotel" />
                             <span>Book Hotels </span>
                         </a>
