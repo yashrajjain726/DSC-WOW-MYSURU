@@ -29,27 +29,27 @@ function Contact() {
                             <li className="nav-item">
                                 <a className="nav-link" href="/#destinations">
                                     Featured destinations
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/covid-dashboard">
                                     Covid Cases
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/#shorcuts">
                                     Make plans
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/volunteers">
                                     Volunteers
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="/contact-us">
                                     Contact us
-                </a>
+                                </a>
                             </li>
                         </Nav>
                     </Navbar.Collapse>

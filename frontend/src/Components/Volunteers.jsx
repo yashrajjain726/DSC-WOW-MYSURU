@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // images
 import volunteer1 from "../Assets/Images/Volunteers/volunteer1.jpg";
@@ -17,7 +17,32 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Nav } from "react-bootstrap";
 import logo from "../Assets/Images/Home/logo.png";
 
+import axios from 'axios'
+import { useToasts } from 'react-toast-notifications'
+import { Spinner } from 'react-bootstrap'
+
 function Volunteers() {
+    const [formDetails, setFormDetails] = useState('');
+    const { name, email, phone, age, gender } = formDetails;
+    const handleChange = e => {
+        setFormDetails({ ...formDetails, [e.target.name]: e.target.value });
+    }
+    const [loading, setLoading] = useState(false);
+
+    const { addToast } = useToasts();
+    const handleSubmit = e => {
+        e.preventDefault();
+        setLoading(true);
+        axios.post('https://error404-mysuru.herokuapp.com/api/volunteer', formDetails).then(res => {
+            setLoading(false);
+            if (res.data)
+                addToast('Submitted Successfully', { appearance: 'success' })
+        }).catch(err => {
+            setLoading(false);
+            if (err.message)
+                addToast('An error occured, try again!', { appearance: 'error' })
+        });
+    }
     return (
         <>
             <Navbar className="fixed-top" expand="lg">
@@ -30,7 +55,7 @@ function Volunteers() {
                     </Navbar.Toggle>
                     <Navbar.Collapse id="navbarSupportedContent">
                         <Nav className="ml-auto">
-                            <li className="nav-item active">
+                            <li className="nav-item">
                                 <a className="nav-link" href="/">
                                     Home
                                 </a>
@@ -127,7 +152,7 @@ function Volunteers() {
             </section>
             <section id="Register">
                 <h1 className="section-heading">Register as a Volunteer</h1>
-                <form action="#" method="post">
+                <form action="#" onChange={handleChange} onSubmit={handleSubmit}>
                     <div id="info">
                         <h5>To register yourself as a volunteer, fill this form</h5>
                     </div>
@@ -164,9 +189,13 @@ function Volunteers() {
                             </div>
                         </label>
                     </div>
-                    <div id="submit">
+                    {loading ?
+                        <button type='submit' className='btn btn-block btn-theme'><Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />Submitting..</button> :
+                        <button type='submit' id="submit" className='btn btn-block btn-theme'>REGISTER</button>
+                    }
+                    {/* <div id="submit">
                         <input type="submit" value="REGISTER " />
-                    </div>
+                    </div> */}
                 </form>
             </section>
         </>

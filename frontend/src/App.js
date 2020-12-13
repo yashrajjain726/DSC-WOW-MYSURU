@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // bootstrap css
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastProvider } from "react-toast-notifications";
 
 // Components
 import Contact from "./Components/Contact";
@@ -27,6 +28,7 @@ import flights from "./Assets/Data/flight.js";
 import hotels from "./Assets/Data/hotels.js";
 import pageData from "./Assets/Data/Ind_page_data.js";
 import firebase from "firebase";
+import { Toast } from "bootstrap";
 
 var firebaseConfig = {
   apiKey: "AIzaSyCi7EGYqr65N0Z15F0aDBGbbk6_rHfxuDw",
@@ -61,7 +63,9 @@ function App() {
             path="/featured-destination/:title"
             component={Ind_page_Ft_Destination}
           />
-          <Route exact path="/volunteers" component={Volunteers} />
+          <ToastProvider>
+            <Route exact path="/volunteers" component={Volunteers} />
+          </ToastProvider>
         </Switch>
       </Router>
 
@@ -95,9 +99,12 @@ function App() {
           </div>
           <div id="footer-coloumn3" className="col-lg-4 col-sm-12 coloumn">
             <h5>Contact Us</h5>
-            <p>Phone : 08064744188</p>
-            <p>Phone : 08064744188</p>
-            <p>E-mail : hello@Mysuru.com</p>
+            <p>
+              <a href="tel:08064744188">Phone : 08064744188</a>
+            </p>
+            <p>
+              <a href="mailto:hello@Mysuru.com">E-mail : hello@Mysuru.com</a>
+            </p>
             <div id="social">
               <a href="https://m.facebook.com/CityMysuru/">
                 <FontAwesomeIcon icon={faFacebook} className="social-icons" />
