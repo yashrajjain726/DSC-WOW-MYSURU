@@ -64,10 +64,10 @@ const Dashboard = () => {
         const response = await fetch(api_url);
         const data = await response.json();
         data.states_daily.forEach((elt) => {
-            if (elt.status == "Confirmed") {
+            if (elt.status === "Confirmed") {
                 xs.push(elt.date);
                 ys.push(elt[STATE.toLowerCase()]);
-            } else if (elt.status == "Recovered") {
+            } else if (elt.status === "Recovered") {
                 rxs.push(elt.date);
                 rys.push(elt[STATE.toLowerCase()]);
             }
@@ -149,7 +149,7 @@ const Dashboard = () => {
         const response2 = await fetch("https://corona.lmao.ninja/v2/countries");
         var data2 = await response2.json();
         data2.forEach((elt) => {
-            if (elt.country == "India") {
+            if (elt.country === "India") {
                 data2 = elt;
                 return;
             }
@@ -189,27 +189,27 @@ const Dashboard = () => {
                             <li className="nav-item">
                                 <a className="nav-link" href="/#destinations">
                                     Featured destinations
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="/covid-dashboard">
                                     Covid Cases
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/#shorcuts">
                                     Make plans
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/volunteers">
                                     Volunteers
-                </a>
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/contact-us">
                                     Contact us
-                </a>
+                                </a>
                             </li>
                         </Nav>
                     </Navbar.Collapse>

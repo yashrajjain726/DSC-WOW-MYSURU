@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // bootstrap css
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Components
 import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";

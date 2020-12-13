@@ -5,8 +5,13 @@ import 'firebase/firestore'
 import 'firebase/database'
 import pageData from "../Assets/Data/Ind_page_data.js";
 import '../Assets/Css/ind-page.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../Assets/Images/Home/logo.png";
+
 function Ft_Destination(props) {
     let [name, setName] = useState('');
     let [review, setReview] = useState('');
@@ -85,6 +90,50 @@ function Ft_Destination(props) {
 
     return (
         <>
+            <Navbar className="fixed-top" expand="lg">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="Mysuru logo" />
+                    </a>
+                    <Navbar.Toggle aria-controls="navbarSupportedContent">
+                        <FontAwesomeIcon icon={faBars} className="nav-toggler" />
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="navbarSupportedContent">
+                        <Nav className="ml-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/#destinations">
+                                    Featured destinations
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/covid-dashboard">
+                                    Covid Cases
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#shorcuts">
+                                    Make plans
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/volunteers">
+                                    Volunteers
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/contact-us">
+                                    Contact us
+                                </a>
+                            </li>
+                        </Nav>
+                    </Navbar.Collapse>
+                </div>
+            </Navbar>
             <div className="container-fluid" style={{ marginTop: '62' + 'px', paddingTop: '20' + 'px' }}>
                 <h1 className="heading mb-4">Featured Destinations</h1>
                 <div className="row">
