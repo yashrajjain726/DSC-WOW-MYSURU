@@ -129,6 +129,13 @@ body {
   font-size: 20px;
 }
 
+.guidelines {
+  background-color: #e13c84;
+  color: white;
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding: 10px;
+}
+
 @media screen and (max-width: 1100px) {
   #label {
     font-size: 30px;
