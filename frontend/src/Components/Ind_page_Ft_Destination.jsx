@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/database'
 import pageData from "../Assets/Data/Ind_page_data.js";
-
+import '../Assets/Css/ind-page.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 function Ft_Destination(props) {
+    let [name, setName] = useState('');
+    let [review, setReview] = useState('');
+    let [oldReviews, setOldReviews] = useState([]);
+
     const [rating, setRating] = useState(0);
     const onStarClick = (nextValue, prevValue, name) => {
         setRating(nextValue);
@@ -34,10 +41,48 @@ function Ft_Destination(props) {
     // }
     useEffect(() => {
         console.log(title.replace(/\s+/g, ""));
-    }, []);
+        loadMessages();
+    }, [id]);
     // const data = props.data;
     // console.log(name);
     const data = pageData[title];
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setName('');
+        setReview('');
+        try {
+            await firebase.database().ref('reviews').child(id).push({
+                name: name,
+                review: review,
+                time: new Date().toLocaleString('en-IN', { hourCycle: 'h24' })
+            });
+            console.log('review saved');
+        } catch (err) {
+            if (err) console.log(err.message);
+        }
+    }
+
+    const loadMessages = async () => {
+        try {
+            await firebase.database().ref('reviews').child(id).on('value', chats => {
+                // console.log(chats.exists());
+                // console.log(chats.val());
+                if (chats.val() != null) {
+                    const values = Object.values(chats.val());
+                    console.log('old msgs');
+                    setOldReviews(values);
+                    // document.getElementById('messages').scrollTo(0, 1000000);
+                    // document.getElementById('view').scrollIntoView();
+                }
+            })
+        }
+        catch (error) {
+            console.log(error.message);
+        }
+    }
+    console.log(oldReviews);
+
     return (
         <div className="container-fluid" style={{ marginTop: '62' + 'px', paddingTop: '20' + 'px' }}>
             <h1 className="heading mb-4">Featured Destinations</h1>
@@ -69,9 +114,41 @@ function Ft_Destination(props) {
                     </section>
                 </div>
             </div>
+            <h1 className="heading mb-4">Reviews</h1>
+            <div >
+                <div className="container mx-auto" id='review-container'>
+                    <div className="mb-4">
+                        {oldReviews && oldReviews.map(review => <Review key={Math.random()} review={review} />)}
+                        <div className="row">
+                            <form className='col-md-8 mb-3 mx-auto' id='review-form' onSubmit={handleSubmit}>
+                                <input type="text" name="name" className="form-control mb-2" placeholder="Name" value={name} required onChange={e => setName(e.target.value)} />
+                                <input type="text" name="review" className="form-control mb-2" placeholder="Review" value={review} required onChange={e => setReview(e.target.value)} />
+                                <button className='btn btn-theme btn-block' type='submit'>Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     )
+}
+const Review = (props) => {
+    let time = props.review.time.split(',')[0];
+    return (
+        <div className="row no-gutters justify-content-flex-start mt-3 mx-auto">
+            <div className="col-10 col-sm-8 mx-auto">
+                <div className=" mr-2">
+                    {props.review.name}
+                </div>
+                <div className=" my-2 sent">
+                    <div className="message-content">{props.review.review}<small className="float-right">{time}</small></div>
+                </div>
+            </div>
+
+        </div>
+    )
+
 }
 
 export default Ft_Destination

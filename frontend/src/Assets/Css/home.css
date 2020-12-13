@@ -370,3 +370,8 @@ df-messenger {
   --df-messenger-send-icon: #da0b63;
   --df-messenger-user-message: #fff;
 }
+.btn-theme {
+  color: #fff !important;
+  background-color: rgb(218, 11, 99);
+  border-color: rgb(218, 11, 99);
+}

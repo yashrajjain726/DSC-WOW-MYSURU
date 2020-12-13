@@ -178,7 +178,7 @@ footer p {
   }
   input {
     border: none;
-    width: 70% !important;
+    /* width: 70% !important; */
     height: 30px;
     outline: none;
     padding-left: 10px;
