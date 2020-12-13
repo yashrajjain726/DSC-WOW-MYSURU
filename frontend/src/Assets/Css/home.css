@@ -21,6 +21,10 @@ nav {
   font-size: 18px;
   font-weight: 500;
   color: #acacac !important;
+  font-family: "Lato", sans-serif !important;
+}
+.nav--active {
+  color: white !important;
 }
 button.navbar-toggler {
   outline: none !important;

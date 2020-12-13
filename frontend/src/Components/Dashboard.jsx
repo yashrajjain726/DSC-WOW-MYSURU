@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import '../Assets/Css/dashboard.css';
 import Chart from 'chart.js'
 
+// nav
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../Assets/Images/Home/logo.png";
+
 const Dashboard = () => {
     var refresh = true;
     var STATE = "KA";
@@ -15,7 +21,6 @@ const Dashboard = () => {
                 return response.json();
             })
             .then((mydata) => {
-                console.log(mydata.Karnataka.districtData.Mysuru["active"]);
                 let elt = mydata.Karnataka.districtData.Mysuru;
                 const data = {
                     datasets: [
@@ -77,7 +82,6 @@ const Dashboard = () => {
         const ctx = document.getElementById("chart").getContext("2d");
         var t = document.getElementById("subtitle-chart");
         t.innerHTML = `Date Wise New Cases : ${state}`;
-        console.log(state);
         const myChart = new Chart(ctx, {
             type: "line",
             fill: false,
@@ -151,9 +155,7 @@ const Dashboard = () => {
             }
         });
         var data = await response.json();
-        console.log(data[STATE].total);
         var pin5 = document.getElementById("title-element");
-        console.log(data2);
         var pin6 = document.getElementById("label");
         pin6.innerHTML = `COVID19 Dashboard of Mysuru `;
         let updatedFormatted = new Date(data2.updated).toLocaleString();
@@ -169,13 +171,57 @@ const Dashboard = () => {
 
     return (
         <>
+            <Navbar className="fixed-top" expand="lg">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="Mysuru logo" />
+                    </a>
+                    <Navbar.Toggle aria-controls="navbarSupportedContent">
+                        <FontAwesomeIcon icon={faBars} className="nav-toggler" />
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="navbarSupportedContent">
+                        <Nav className="ml-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#destinations">
+                                    Featured destinations
+                </a>
+                            </li>
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/covid-dashboard">
+                                    Covid Cases
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#shorcuts">
+                                    Make plans
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/volunteers">
+                                    Volunteers
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/contact-us">
+                                    Contact us
+                </a>
+                            </li>
+                        </Nav>
+                    </Navbar.Collapse>
+                </div>
+            </Navbar>
             <div className='body'>
                 <section id="covid-19-dashboard">
                     <div id="card-container">
-                        <div id="confirmed" class="covid-card">Confirmed:</div>
-                        <div id="recovered" class="covid-card">Recovered:</div>
-                        <div id="active" class="covid-card">Active:</div>
-                        <div id="deceased" class="covid-card">Deceased:</div>
+                        <div id="confirmed" className="covid-card">Confirmed:</div>
+                        <div id="recovered" className="covid-card">Recovered:</div>
+                        <div id="active" className="covid-card">Active:</div>
+                        <div id="deceased" className="covid-card">Deceased:</div>
                     </div>
                     <p id="label">COVID19 Dashboard of India</p>
                     <p id="title-element">Last Updated On:</p>
@@ -184,9 +230,8 @@ const Dashboard = () => {
                             <canvas id="chartPie" width="100" height="50"></canvas><br />
                             <p id="subtitle-piechart" style={{ width: "100%", fontSize: "14" + "px" }}>
                                 Case Study : Mysuru
-            </p>
+                            </p>
                         </div>
-
                         <div id="Graph" style={{ display: "inline-block" }}>
                             <canvas id="chart" width="100" height="50"></canvas>
                             <p id="subtitle-chart" style={{ width: "100%", fontSize: "14" + "px" }}></p>
@@ -199,33 +244,33 @@ const Dashboard = () => {
 
             <h1 className="heading mb-4">Covid Guidelines</h1>
             <div className="container">
-                <h5 className='heading mt-5'>What to do to keep yourself and others safe from COVID-19 ?</h5>
-                <p className='guidelines'>
+                <h5 className='guidelines_heading mt-5'>What to do to keep yourself and others safe from COVID-19 ?</h5>
+                <p className='guidelines_text'>
                     Maintain at least a 1-metre distance between yourself and others to reduce your risk of infection when they cough, sneeze or speak.
                     Make wearing a mask a normal part of being around other people. The appropriate use, storage and cleaning or disposal are essential to make masks as effective as possible.
                 </p>
 
-                <h5 className='heading mt-5'>How to make your environment safer ?</h5>
-                <p className='guidelines'>Avoid the 3Cs: spaces that are closed, crowded or involve close contact.                </p>
-                <p className='guidelines'>Meet people outside. Outdoor gatherings are safer than indoor ones, particularly if indoor spaces are small and without outdoor air coming in</p>
-                <p className='guidelines'>Avoid crowded or indoor settings but if you can’t, then take precautions.</p>
-                <p className='guidelines'>Open a window. Increase the amount of ‘natural ventilation’ when indoors.</p>
+                <h5 className='guidelines_heading mt-5'>How to make your environment safer ?</h5>
+                <p className='guidelines_text'>Avoid the 3Cs: spaces that are closed, crowded or involve close contact.                </p>
+                <p className='guidelines_text'>Meet people outside. Outdoor gatherings are safer than indoor ones, particularly if indoor spaces are small and without outdoor air coming in</p>
+                <p className='guidelines_text'>Avoid crowded or indoor settings but if you can’t, then take precautions.</p>
+                <p className='guidelines_text'>Open a window. Increase the amount of ‘natural ventilation’ when indoors.</p>
 
 
-                <h5 className='heading mt-5'>Don’t forget the basics of good hygiene</h5>
-                <p className='guidelines'>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</p>
-                <p className='guidelines'>Avoid touching your eyes, nose and mouth. Hands touch many surfaces and can pick up viruses.</p>
-                <p className='guidelines'>
+                <h5 className='guidelines_heading mt-5'>Don’t forget the basics of good hygiene</h5>
+                <p className='guidelines_text'>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</p>
+                <p className='guidelines_text'>Avoid touching your eyes, nose and mouth. Hands touch many surfaces and can pick up viruses.</p>
+                <p className='guidelines_text'>
                     Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze.</p>
-                <p className='guidelines'>Clean and disinfect surfaces frequently especially those which are regularly touched, such as door handles, faucets and phone screens.</p>
+                <p className='guidelines_text'>Clean and disinfect surfaces frequently especially those which are regularly touched, such as door handles, faucets and phone screens.</p>
 
-                <h5 className='heading mt-5'>What to do if you feel unwell?</h5>
-                <p className='guidelines'>
+                <h5 className='guidelines_heading mt-5'>What to do if you feel unwell?</h5>
+                <p className='guidelines_text'>
                     Know the full range of symptoms of COVID-19. The most common symptoms of COVID-19 are fever, dry cough, and tiredness.</p>
-                <p className='guidelines'>Stay home and self-isolate even if you have minor symptoms such as cough, headache, mild fever, until you recover.</p>
-                <p className='guidelines'>Call your health care provider or hotline for advice. Have someone bring you supplies.</p>
-                <p className='guidelines'>If you have a fever, cough and difficulty breathing, seek medical attention immediately.</p>
-                <p className='guidelines mb-4'>Keep up to date on the latest information from trusted sources, such as WHO or your local and national health authorities.</p>
+                <p className='guidelines_text'>Stay home and self-isolate even if you have minor symptoms such as cough, headache, mild fever, until you recover.</p>
+                <p className='guidelines_text'>Call your health care provider or hotline for advice. Have someone bring you supplies.</p>
+                <p className='guidelines_text'>If you have a fever, cough and difficulty breathing, seek medical attention immediately.</p>
+                <p className='guidelines_text mb-4'>Keep up to date on the latest information from trusted sources, such as WHO or your local and national health authorities.</p>
 
             </div>
 

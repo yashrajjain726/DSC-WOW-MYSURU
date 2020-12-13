@@ -84,40 +84,42 @@ function Ft_Destination(props) {
     console.log(oldReviews);
 
     return (
-        <div className="container-fluid" style={{ marginTop: '62' + 'px', paddingTop: '20' + 'px' }}>
-            <h1 className="heading mb-4">Featured Destinations</h1>
-            <div className="row">
-                <div className="col-md-6">
-                    <img src={data.src} alt="" className='img-fluid' />
-                </div>
-                <div className="col-md-6 mt-4 mt-md-0 px-4 pt-3" id='rating-container'>
-                    <h4 className='text-uppercase'>{title}</h4>
-                    <p>{data.text}</p>
-                    <StarRatingComponent
-                        name="rate1"
-                        starCount={5}
-                        value={rating}
-                        onStarClick={onStarClick}
-                    />
+        <>
+            <div className="container-fluid" style={{ marginTop: '62' + 'px', paddingTop: '20' + 'px' }}>
+                <h1 className="heading mb-4">Featured Destinations</h1>
+                <div className="row">
+                    <div className="col-md-6">
+                        <img src={data.src} alt="" className='img-fluid' />
+                    </div>
+                    <div className="col-md-6 mt-4 mt-md-0 px-4 pt-3" id='rating-container'>
+                        <h4 className='text-uppercase'>{title}</h4>
+                        <p>{data.text}</p>
+                        <StarRatingComponent
+                            name="rate1"
+                            starCount={5}
+                            value={rating}
+                            onStarClick={onStarClick}
+                        />
 
+                    </div>
                 </div>
-            </div>
-            <div className="row my-5">
-                <div className="col-md-6">
-                    <section className="py-3 text-center">
-                        <iframe src={data.map} width='100%' height="300" style={{ border: "0" }} aria-hidden="false" tabIndex="0">Your browser doesn't support Map</iframe>
-                    </section>
-                </div>
-                <div className="col-md-6">
-                    <section className="py-3 text-center">
-                        <iframe src={data._3dview} width='100%' height="300" style={{ border: "0" }} aria-hidden="false" tabIndex="0">Your browser doesn't support Map</iframe>
-                    </section>
+                <div className="row my-5">
+                    <div className="col-md-6">
+                        <section className="py-3 text-center">
+                            <iframe src={data.map} width='100%' height="300" style={{ border: "0" }} aria-hidden="false" tabIndex="0">Your browser doesn't support Map</iframe>
+                        </section>
+                    </div>
+                    <div className="col-md-6">
+                        <section className="py-3 text-center">
+                            <iframe src={data._3dview} width='100%' height="300" style={{ border: "0" }} aria-hidden="false" tabIndex="0">Your browser doesn't support Map</iframe>
+                        </section>
+                    </div>
                 </div>
             </div>
             <h1 className="heading mb-4">Reviews</h1>
-            <div >
-                <div className="container mx-auto" id='review-container'>
-                    <div className="mb-4">
+            <div id='review-container' className='py-4'>
+                <div className="container mx-auto" >
+                    <div>
                         {oldReviews && oldReviews.map(review => <Review key={Math.random()} review={review} />)}
                         <div className="row">
                             <form className='col-md-8 mb-3 mx-auto' id='review-form' onSubmit={handleSubmit}>
@@ -129,8 +131,7 @@ function Ft_Destination(props) {
                     </div>
                 </div>
             </div>
-        </div>
-
+        </>
     )
 }
 const Review = (props) => {

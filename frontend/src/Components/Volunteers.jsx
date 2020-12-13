@@ -10,9 +10,60 @@ import volunteer6 from "../Assets/Images/Volunteers/volunteer6.jpg";
 
 import '../Assets/Css/volunteers.css'
 
+
+// nav
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../Assets/Images/Home/logo.png";
+
 function Volunteers() {
     return (
         <>
+            <Navbar className="fixed-top" expand="lg">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="Mysuru logo" />
+                    </a>
+                    <Navbar.Toggle aria-controls="navbarSupportedContent">
+                        <FontAwesomeIcon icon={faBars} className="nav-toggler" />
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="navbarSupportedContent">
+                        <Nav className="ml-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/">
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#destinations">
+                                    Featured destinations
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/covid-dashboard">
+                                    Covid Cases
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#shorcuts">
+                                    Make plans
+                </a>
+                            </li>
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/volunteers">
+                                    Volunteers
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/contact-us">
+                                    Contact us
+                </a>
+                            </li>
+                        </Nav>
+                    </Navbar.Collapse>
+                </div>
+            </Navbar>
             <section id="volunteers">
                 <h1 className="section-heading">Volunteers of Mysuru  </h1>
                 <div className="card-deck">

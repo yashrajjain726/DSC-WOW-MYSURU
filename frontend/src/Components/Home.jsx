@@ -4,6 +4,10 @@ import slide1 from '../Assets/Images/Home/slide1.jpg'
 import slide2 from '../Assets/Images/Home/slide2.jpg'
 import slide3 from '../Assets/Images/Home/slide3.jpg'
 import { Carousel } from 'react-bootstrap'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../Assets/Images/Home/logo.png";
 
 // images
 import flight from '../Assets/Images/Home/flight.jpg'
@@ -36,13 +40,57 @@ function Home() {
     }, [])
     return (
         <>
+            <Navbar className="fixed-top" expand="lg">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="Mysuru logo" />
+                    </a>
+                    <Navbar.Toggle aria-controls="navbarSupportedContent">
+                        <FontAwesomeIcon icon={faBars} className="nav-toggler" />
+                    </Navbar.Toggle>
+                    <Navbar.Collapse id="navbarSupportedContent">
+                        <Nav className="ml-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/">
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#destinations">
+                                    Featured destinations
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/covid-dashboard">
+                                    Covid Cases
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#shorcuts">
+                                    Make plans
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/volunteers">
+                                    Volunteers
+                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/contact-us">
+                                    Contact us
+                </a>
+                            </li>
+                        </Nav>
+                    </Navbar.Collapse>
+                </div>
+            </Navbar>
             <Carousel>
                 <Carousel.Item>
                     <img src={slide1} className="d-block w-100" id="img1" alt="Notes" />
                     <Carousel.Caption>
                         <h5 className="animate__animated animate__fadeInDown">Scenic Beauty</h5>
                         <p className="animate__animated animate__fadeIn">Want to Witness the Most beautiful tourist locations of India? Don't Wait Visit Mysuru today</p>
-                        <p className="animate__animated animate__fadeInUp"><a href="/appointment">Explore now</a></p>
+                        <p className="animate__animated animate__fadeInUp"><a href="/#destinations">Explore now</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -60,12 +108,12 @@ Get connected with them easily</p>
                         <h5 className="animate__animated animate__fadeInDown">Make yout plans</h5>
                         <p className="animate__animated animate__fadeIn">Want to visit mysuru but haven't made your plans?
 Make you tour interesting with our help. Make your plans now</p>
-                        <p className="animate__animated animate__fadeInUp"><a href="/#destinations">Let's go</a></p>
+                        <p className="animate__animated animate__fadeInUp"><a href="/#shorcuts">Let's go</a></p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
             <section id="destinations">
-                <h1 class="section-heading">Featured Destinations </h1>
+                <h1 className="section-heading">Featured Destinations </h1>
                 <div className="row mx-auto pb-3">
                     {
                         FeaturedDestinations.map(data => {
@@ -77,27 +125,27 @@ Make you tour interesting with our help. Make your plans now</p>
                 </div>
             </section>
             <section id="video" className='mt-3'>
-                <h1 class="section-heading">Mysuru at a glance </h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5E4BtByzQic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1 className="section-heading">Mysuru at a glance </h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5E4BtByzQic" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </section>
             <section id="shorcuts">
-                <h1 class="section-heading explore">Make Your plans</h1>
-                <div class="card-deck">
-                    <div class="card">
-                        <a href="/book-flights" class="card-link">
-                            <img src={flight} class="card-img-top" alt="Flight" />
+                <h1 className="section-heading explore">Make Your plans</h1>
+                <div className="card-deck">
+                    <div className="card">
+                        <a href="/book-flights" className="card-link">
+                            <img src={flight} className="card-img-top" alt="Flight" />
                             <span>Book Flight </span>
                         </a>
                     </div>
-                    <div class="card">
-                        <a href="/book-hotels" class="card-link">
-                            <img src={hotel} class="card-img-top" alt="Hotel" />
+                    <div className="card">
+                        <a href="/book-hotels" className="card-link">
+                            <img src={hotel} className="card-img-top" alt="Hotel" />
                             <span>Book Hotels </span>
                         </a>
                     </div>
-                    <div class="card">
-                        <a href="/todo-in-mysuru" class="card-link">
-                            <img src={mustDo} class="card-img-top" alt="ToDo" />
+                    <div className="card">
+                        <a href="/todo-in-mysuru" className="card-link">
+                            <img src={mustDo} className="card-img-top" alt="ToDo" />
                             <span>Must do in Mysuru </span>
                         </a>
                     </div>
@@ -105,7 +153,7 @@ Make you tour interesting with our help. Make your plans now</p>
             </section>
             <section id="book">
                 <p>Want to learn more?</p>
-                <a href="https://twitter.com/hashtag/mysuru?lang=en"><button>Explore #Mysuru </button></a>
+                <a href="https://twitter.com/hashtag/mysuru?lang=en" target='_blank' rel='noopener noreferrer'><button>Explore #Mysuru </button></a>
             </section>
         </>
     )

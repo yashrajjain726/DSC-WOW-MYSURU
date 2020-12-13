@@ -10,6 +10,7 @@ import Bookings from "./Components/Bookings";
 import ToDo from "./Components/ToDo";
 import Ind_page_Ft_Destination from "./Components/Ind_page_Ft_Destination";
 import Volunteers from "./Components/Volunteers";
+import logo from "./Assets/Images/Home/logo.png";
 
 import "./Assets/Css/home.css";
 
@@ -19,10 +20,6 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Nav } from "react-bootstrap";
-
-import logo from "./Assets/Images/Home/logo.png";
 
 // data
 import flights from "./Assets/Data/flight.js";
@@ -45,52 +42,6 @@ firebase.initializeApp(firebaseConfig);
 function App() {
   return (
     <>
-      {/* // nav  */}
-      <Navbar className="fixed-top" expand="lg">
-        <div className="container">
-          <a className="navbar-brand" href="/">
-            <img src={logo} alt="Mysuru logo" />
-          </a>
-          <Navbar.Toggle aria-controls="navbarSupportedContent">
-            <FontAwesomeIcon icon={faBars} className="nav-toggler" />
-          </Navbar.Toggle>
-          <Navbar.Collapse id="navbarSupportedContent">
-            <Nav className="ml-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/#destinations">
-                  Featured destinations
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/covid-dashboard">
-                  Covid Cases
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/#shorcuts">
-                  Make plans
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/volunteers">
-                  Volunteers
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact-us">
-                  Contact us
-                </a>
-              </li>
-            </Nav>
-          </Navbar.Collapse>
-        </div>
-      </Navbar>
-
       {/* // routers */}
       <Router>
         <Switch>
@@ -147,13 +98,13 @@ function App() {
             <p>Phone : 08064744188</p>
             <p>E-mail : hello@Mysuru.com</p>
             <div id="social">
-              <a href="#">
+              <a href="https://m.facebook.com/CityMysuru/">
                 <FontAwesomeIcon icon={faFacebook} className="social-icons" />
               </a>
-              <a href="#">
+              <a href="https://mobile.twitter.com/mysurucitycorp">
                 <FontAwesomeIcon icon={faTwitter} className="social-icons" />
               </a>
-              <a href="#">
+              <a href="https://instagram.com/mysuru?igshid=999xverqra">
                 <FontAwesomeIcon icon={faInstagram} className="social-icons" />
               </a>
             </div>

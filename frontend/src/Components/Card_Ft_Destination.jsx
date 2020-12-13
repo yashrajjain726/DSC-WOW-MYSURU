@@ -14,11 +14,11 @@ function Card_Ft_Destination(props) {
 
     return (
         <div className="col-12 col-sm-6 col-md-4 mx-auto mt-3">
-            <div class="card">
-                <a href={`/featured-destination/${props.data.cardTitle}`} class="card-link">
-                    <img src={props.data.src} class="card-img-top" alt={props.data.cardTitle} />
-                    <div class="card-body pb-0" id="rating-container">
-                        <h5 class="card-title">{props.data.cardTitle}</h5>
+            <div className="card">
+                <a href={`/featured-destination/${props.data.cardTitle}`} className="card-link">
+                    <img src={props.data.src} className="card-img-top" alt={props.data.cardTitle} />
+                    <div className="card-body pb-0" id="rating-container">
+                        <h5 className="card-title">{props.data.cardTitle}</h5>
                         <div className="row">
                             <div className="col-8">
                                 <StarRatingComponent
